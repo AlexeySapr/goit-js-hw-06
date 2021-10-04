@@ -22,22 +22,3 @@ button {
 	padding: 8px 12px;
 	cursor: pointer;
 }
-
-/*task-03*/
-.gallery {
-	list-style: none;
-	padding: 0;
-	display: flex;
-}
-
-.gallery__item {
-	flex-basis: calc(100% / 3);
-}
-
-.gallery__item:not(:last-child) {
-	margin-right: 15px;
-}
-
-.gallery__item img {
-	width: 100%;
-}
