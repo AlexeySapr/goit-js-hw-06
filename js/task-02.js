@@ -1,24 +1,33 @@
-const ingredients = ['Potatoes', 'Mushrooms', 'Garlic', 'Tomatos', 'Herbs', 'Condiments'];
+const ingredients = [
+  "Potatoes",
+  "Mushrooms",
+  "Garlic",
+  "Tomatos",
+  "Herbs",
+  "Condiments",
+];
 
-const list = document.querySelector('ul#ingredients');
-// console.log(list);
+const list = document.querySelector("ul#ingredients");
 
-/* первый способ */
+/*вариант 1*/
+// const liItems = [];
+
 // for (const ingredient of ingredients) {
-// 	const item = document.createElement('li');
-// 	item.textContent = ingredient;
-// 	item.classList.add('item');
-// 	list.append(item);
+//   const item = document.createElement("li");
+//   item.textContent = ingredient;
+//   item.classList.add("item");
+//   liItems.push(item);
 // }
 
-/* второй способ */
-const liItems = [];
+// list.append(...liItems);
 
-for (const ingredient of ingredients) {
-	const item = document.createElement('li');
-	item.textContent = ingredient;
-	item.classList.add('item');
-	liItems.push(item);
-}
+/*вариант 2*/
+const liItem = (ingredient) => {
+  const item = document.createElement("li");
+  item.textContent = ingredient;
+  item.classList.add("item");
+  return item;
+};
 
+const liItems = ingredients.map(liItem);
 list.append(...liItems);
